@@ -24,6 +24,7 @@ SOFTWARE.
  */
 package io.github.steve4744.whatisthis;
 
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -31,6 +32,8 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.event.player.PlayerMoveEvent;
+
+import java.util.Set;
 
 public class WhatIsThisListener implements Listener {
 
@@ -51,10 +54,10 @@ public class WhatIsThisListener implements Listener {
 		}
 	}
 	@EventHandler
-	public void onQueryBlock(PlayerMoveEvent event) {
+	public void onQueryBlock2(PlayerMoveEvent event) {
 		Player player = event.getPlayer();
 		if (player.hasPermission("whatisthis.use")) {
-			plugin.getDisplayHandler().getVisualMethod(event.getClickedBlock(), player);
+			plugin.getDisplayHandler().getVisualMethod(player.getTargetBlock((Set<Material>) null, 5), player);
 		}
 	}
 }
