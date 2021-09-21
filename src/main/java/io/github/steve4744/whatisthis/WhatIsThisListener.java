@@ -49,4 +49,11 @@ public class WhatIsThisListener implements Listener {
 			plugin.getDisplayHandler().getVisualMethod(event.getClickedBlock(), player);
 		}
 	}
+	@EventHandler
+	public void onQueryBlock(PlayerMoveEvent event) {
+		Player player = event.getPlayer();
+		if (player.hasPermission("whatisthis.use")) {
+			plugin.getDisplayHandler().getVisualMethod(event.getClickedBlock(), player);
+		}
+	}
 }
