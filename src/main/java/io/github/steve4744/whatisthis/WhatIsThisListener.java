@@ -56,7 +56,7 @@ public class WhatIsThisListener implements Listener {
 	@EventHandler
 	public void onQueryBlock2(PlayerMoveEvent event) {
 		Player player = event.getPlayer();
-		if (player.hasPermission("whatisthis.use")) {
+		if (player.hasPermission("whatisthis.use") && plugin.getSettings().isRightClickEnabled()) {
 			plugin.getDisplayHandler().getVisualMethod(player.getTargetBlock((Set<Material>) null, 5), player);
 		}
 	}
