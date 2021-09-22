@@ -44,7 +44,7 @@ public class WhatIsThisCommand implements CommandExecutor {
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-		String prefix = ChatColor.GREEN + "[WhatIsThis] " + ChatColor.WHITE;
+		String prefix = ChatColor.GREEN + "[TeraXDisplay] " + ChatColor.WHITE;
 		String infoMessage = prefix + "Version " + version + " : plugin by "+ ChatColor.AQUA + "steve4744";
 		
 		if (!sender.hasPermission("whatisthis.use")) {
