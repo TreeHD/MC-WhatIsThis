@@ -60,13 +60,13 @@ public class WhatIsThisCommand implements CommandExecutor {
 				plugin.reloadPlugin();
 				sender.sendMessage(prefix + "Config reloaded");
 				return true;
-			} else if (args[0].equalsIgnoreCase("toggleclick")) {
+			} else if (args[0].equalsIgnoreCase("toggleclick") || args[0].equalsIgnoreCase("toggle")) {
 				String action = "OFF";
 				plugin.getSettings().toggleRightClick();
 				if (plugin.getSettings().isRightClickEnabled()) {
 					action = "ON";
 				}
-				sender.sendMessage(prefix + "Right-click toggled " + ChatColor.AQUA + action);
+				sender.sendMessage(prefix + "物品顯示 " + ChatColor.AQUA + action);
 				return true;
 			}
 			sender.sendMessage(infoMessage);
