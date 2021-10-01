@@ -44,16 +44,6 @@ public class WhatIsThisListener implements Listener {
 	}
 
 	@EventHandler
-	public void onQueryBlock(PlayerInteractEvent event) {
-		if (event.getAction() != Action.RIGHT_CLICK_BLOCK || event.getHand().equals(EquipmentSlot.OFF_HAND) || !plugin.getSettings().isRightClickEnabled()) {
-			return;
-		}
-		Player player = event.getPlayer();
-		if (player.hasPermission("whatisthis.use") && player.getInventory().getItemInMainHand().getType() == plugin.getSettings().getClickItem()) {
-			plugin.getDisplayHandler().getVisualMethod(event.getClickedBlock(), player);
-		}
-	}
-	@EventHandler
 	public void onQueryBlock2(PlayerMoveEvent event) {
 		Player player = event.getPlayer();
 		if (player.hasPermission("whatisthis.use") && plugin.getSettings().isRightClickEnabled()) {
